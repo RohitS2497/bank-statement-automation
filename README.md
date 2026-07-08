@@ -1,6 +1,6 @@
 # Bank Statement Automation — MVP
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rohit-srivastava-ist/bank-statement-automation/blob/main/demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/RohitS2497/bank-statement-automation/blob/main/demo.ipynb)
 
 **Gmail → Drive → Parse → Analyse → Visualise → Cross-check → Excel**
 
