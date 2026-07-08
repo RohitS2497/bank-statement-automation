@@ -1,0 +1,25 @@
+2026-07-08 09:56:44,738 | INFO    | STAGE 1/6  FETCH  — reading PDFs from /home/claude/bankmvp/inbox
+2026-07-08 09:56:44,739 | INFO    |            found 4 candidate file(s)
+2026-07-08 09:56:44,739 | INFO    | STAGE 2/6  PARSE  — extracting transactions (edge cases handled)
+2026-07-08 09:56:44,741 | INFO    |            [SKIP] EMPTY_scan_blank.pdf             EMPTY     no text layer (blank/scanned) — needs OCR
+2026-07-08 09:56:44,833 | INFO    |            [OK ] HDFC_Statement_Apr2026.pdf       PARSED    22 txns / 1p
+2026-07-08 09:56:44,942 | INFO    |            [OK ] ICICI_Statement_May2026.pdf      PARSED    41 txns / 2p
+2026-07-08 09:56:44,945 | INFO    |            [SKIP] LOCKED_Statement_Jun2026.pdf     ENCRYPTED password-protected; not in known list
+2026-07-08 09:56:44,946 | INFO    |            parsed 63 transactions from 2 statement(s)
+2026-07-08 09:56:44,946 | INFO    | STAGE 3/6  ANALYSE — categorising & summarising
+2026-07-08 09:56:44,959 | INFO    |            income=INR 518,750  expense=INR 256,172  net=INR 262,578
+2026-07-08 09:56:44,959 | INFO    | STAGE 4/6  VISUALISE — building charts
+2026-07-08 09:56:45,279 | INFO    |            chart -> outputs/charts/spend_by_category.png
+2026-07-08 09:56:45,279 | INFO    |            chart -> outputs/charts/income_vs_expense.png
+2026-07-08 09:56:45,279 | INFO    |            chart -> outputs/charts/balance_trend.png
+2026-07-08 09:56:45,279 | INFO    | STAGE 5/6  CROSS-CHECK — reconciling balances & anomalies
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Balance mismatch   ICICI_Statement_May2026.pdf row 21  (expected 222,598.86 but statement shows 227,598.86)
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Balance mismatch   ICICI_Statement_May2026.pdf row 22  (expected 231,574.72 but statement shows 226,574.72)
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Possible duplicate ICICI_Statement_May2026.pdf row 11  (3,614.88 on 2026-05-17)
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Possible duplicate ICICI_Statement_May2026.pdf row 12  (3,614.88 on 2026-05-17)
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Possible duplicate ICICI_Statement_May2026.pdf row 27  (28,500.00 on 2026-05-31)
+2026-07-08 09:56:45,288 | WARNING |            FLAG  Possible duplicate ICICI_Statement_May2026.pdf row 28  (28,500.00 on 2026-05-31)
+2026-07-08 09:56:45,288 | INFO    | STAGE 6/6  MASK/EXPORT — PII masking=False; writing outputs
+2026-07-08 09:56:45,343 | INFO    |            CSV   -> outputs/transactions_clean.csv
+2026-07-08 09:56:45,343 | INFO    |            XLSX  -> outputs/Bank_Statement_Analysis.xlsx
+2026-07-08 09:56:45,343 | INFO    | DONE. 63 txns · 6 flag(s) · 2 file(s) skipped as edge cases.
